@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:netflix_app/domian/core/apiEndPoints.dart';
+import 'package:netflix_app/domian/core/api_endpoints.dart';
 import 'package:netflix_app/domian/core/failures/main_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:netflix_app/domian/downloads/i_downloads_repo.dart';
@@ -15,12 +13,13 @@ class DownloadsRepository implements IDownloadsRepo {
     try {
       final Response response =
           await Dio(BaseOptions()).get(ApiEndPoints.downloads);
+
       if (response.statusCode == 200 || response.statusCode == 201) {
-        print(response.data);
         final downloadsList = (response.data['results'] as List).map((e) {
           return Downloads.fromJson(e);
         }).toList();
-        print(downloadsList);
+
+
         return Right(downloadsList);
       } else {
         return const Left(MainFailure.serverfailure());

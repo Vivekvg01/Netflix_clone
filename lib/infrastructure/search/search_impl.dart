@@ -7,7 +7,7 @@ import 'package:netflix_app/domian/core/failures/main_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:netflix_app/domian/search/search_service.dart';
 
-import '../../domian/core/apiEndPoints.dart';
+import '../../domian/core/api_endpoints.dart';
 
 @LazySingleton(as: SearchService)
 class SearchImpl implements SearchService {

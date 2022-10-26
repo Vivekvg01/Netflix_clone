@@ -33,12 +33,12 @@ dependencies:
   dio: ^4.0.6
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
-  freezed_annotation: ^2.0.3
+  flutter_bloc: 8.0.1
+  freezed_annotation: 2.0.3
   get_it: ^7.2.0
-  google_fonts: null
+  google_fonts: 
   injectable: ^1.5.3
-  json_annotation: ^4.4.0
+  json_annotation: 4.4.0
   share_plus: 4.0.3
   video_player: 2.3.0
 
@@ -47,7 +47,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.0.2
+  freezed: 2.0.2
   injectable_generator: ^1.5.3
   json_serializable: ^6.1.6
 

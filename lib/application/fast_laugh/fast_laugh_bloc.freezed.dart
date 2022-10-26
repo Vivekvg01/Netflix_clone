@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'fastlaugh_bloc.dart';
+part of 'fast_laugh_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,56 +15,56 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FastlaughEvent {
+mixin _$FastLaughEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialze,
+    required TResult Function() initialize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialze,
+    TResult Function()? initialize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialze,
+    TResult Function()? initialize,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initialize value) initialze,
+    required TResult Function(Initialize value) initialize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initialize value)? initialze,
+    TResult Function(Initialize value)? initialize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initialize value)? initialze,
+    TResult Function(Initialize value)? initialize,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FastlaughEventCopyWith<$Res> {
-  factory $FastlaughEventCopyWith(
-          FastlaughEvent value, $Res Function(FastlaughEvent) then) =
-      _$FastlaughEventCopyWithImpl<$Res>;
+abstract class $FastLaughEventCopyWith<$Res> {
+  factory $FastLaughEventCopyWith(
+          FastLaughEvent value, $Res Function(FastLaughEvent) then) =
+      _$FastLaughEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FastlaughEventCopyWithImpl<$Res>
-    implements $FastlaughEventCopyWith<$Res> {
-  _$FastlaughEventCopyWithImpl(this._value, this._then);
+class _$FastLaughEventCopyWithImpl<$Res>
+    implements $FastLaughEventCopyWith<$Res> {
+  _$FastLaughEventCopyWithImpl(this._value, this._then);
 
-  final FastlaughEvent _value;
+  final FastLaughEvent _value;
   // ignore: unused_field
-  final $Res Function(FastlaughEvent) _then;
+  final $Res Function(FastLaughEvent) _then;
 }
 
 /// @nodoc
@@ -75,7 +75,7 @@ abstract class $InitializeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InitializeCopyWithImpl<$Res> extends _$FastlaughEventCopyWithImpl<$Res>
+class _$InitializeCopyWithImpl<$Res> extends _$FastLaughEventCopyWithImpl<$Res>
     implements $InitializeCopyWith<$Res> {
   _$InitializeCopyWithImpl(Initialize _value, $Res Function(Initialize) _then)
       : super(_value, (v) => _then(v as Initialize));
@@ -91,7 +91,7 @@ class _$Initialize implements Initialize {
 
   @override
   String toString() {
-    return 'FastlaughEvent.initialze()';
+    return 'FastLaughEvent.initialize()';
   }
 
   @override
@@ -106,27 +106,27 @@ class _$Initialize implements Initialize {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initialze,
+    required TResult Function() initialize,
   }) {
-    return initialze();
+    return initialize();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialze,
+    TResult Function()? initialize,
   }) {
-    return initialze?.call();
+    return initialize?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialze,
+    TResult Function()? initialize,
     required TResult orElse(),
   }) {
-    if (initialze != null) {
-      return initialze();
+    if (initialize != null) {
+      return initialize();
     }
     return orElse();
   }
@@ -134,63 +134,63 @@ class _$Initialize implements Initialize {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initialize value) initialze,
+    required TResult Function(Initialize value) initialize,
   }) {
-    return initialze(this);
+    return initialize(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initialize value)? initialze,
+    TResult Function(Initialize value)? initialize,
   }) {
-    return initialze?.call(this);
+    return initialize?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initialize value)? initialze,
+    TResult Function(Initialize value)? initialize,
     required TResult orElse(),
   }) {
-    if (initialze != null) {
-      return initialze(this);
+    if (initialize != null) {
+      return initialize(this);
     }
     return orElse();
   }
 }
 
-abstract class Initialize implements FastlaughEvent {
+abstract class Initialize implements FastLaughEvent {
   const factory Initialize() = _$Initialize;
 }
 
 /// @nodoc
-mixin _$FastlaughState {
+mixin _$FastLaughState {
   List<Downloads> get videosList => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FastlaughStateCopyWith<FastlaughState> get copyWith =>
+  $FastLaughStateCopyWith<FastLaughState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FastlaughStateCopyWith<$Res> {
-  factory $FastlaughStateCopyWith(
-          FastlaughState value, $Res Function(FastlaughState) then) =
-      _$FastlaughStateCopyWithImpl<$Res>;
+abstract class $FastLaughStateCopyWith<$Res> {
+  factory $FastLaughStateCopyWith(
+          FastLaughState value, $Res Function(FastLaughState) then) =
+      _$FastLaughStateCopyWithImpl<$Res>;
   $Res call({List<Downloads> videosList, bool isLoading, bool isError});
 }
 
 /// @nodoc
-class _$FastlaughStateCopyWithImpl<$Res>
-    implements $FastlaughStateCopyWith<$Res> {
-  _$FastlaughStateCopyWithImpl(this._value, this._then);
+class _$FastLaughStateCopyWithImpl<$Res>
+    implements $FastLaughStateCopyWith<$Res> {
+  _$FastLaughStateCopyWithImpl(this._value, this._then);
 
-  final FastlaughState _value;
+  final FastLaughState _value;
   // ignore: unused_field
-  final $Res Function(FastlaughState) _then;
+  final $Res Function(FastLaughState) _then;
 
   @override
   $Res call({
@@ -217,7 +217,7 @@ class _$FastlaughStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res>
-    implements $FastlaughStateCopyWith<$Res> {
+    implements $FastLaughStateCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
   @override
@@ -225,7 +225,7 @@ abstract class _$InitialCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$FastlaughStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$FastLaughStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -279,7 +279,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'FastlaughState(videosList: $videosList, isLoading: $isLoading, isError: $isError)';
+    return 'FastLaughState(videosList: $videosList, isLoading: $isLoading, isError: $isError)';
   }
 
   @override
@@ -306,7 +306,7 @@ class _$_Initial implements _Initial {
       __$InitialCopyWithImpl<_Initial>(this, _$identity);
 }
 
-abstract class _Initial implements FastlaughState {
+abstract class _Initial implements FastLaughState {
   const factory _Initial(
       {required final List<Downloads> videosList,
       required final bool isLoading,

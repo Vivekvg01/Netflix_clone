@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/application/fastLaugh/fastlaugh_bloc.dart';
+import 'package:netflix_app/application/fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix_app/application/search/search_bloc.dart';
 import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/di/injectable.dart';
-import 'package:netflix_app/presentation/main_page/screeMainPage.dart';
+import 'package:netflix_app/domian/core/di/injectable.dart';
+import 'package:netflix_app/presentation/main_page/screen_main_page.dart';
 
 import 'application/downloads/downloads_bloc.dart';
 
@@ -18,17 +18,17 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (ctx) => getIt<DownloadsBloc>()),
         BlocProvider(create: (ctx) => getIt<SearchBloc>()),
-        BlocProvider(create: (ctx) => getIt<FastlaughBloc>()),
+         BlocProvider(create: (ctx) => getIt<FastLaughBloc>()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.transparent,

@@ -4,13 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_app/application/search/search_bloc.dart';
 import 'package:netflix_app/core/constants.dart';
 import 'package:netflix_app/domian/core/debounce/debounce.dart';
-import 'package:netflix_app/presentation/search/widgets/searchIdle.dart';
+import 'package:netflix_app/presentation/search/widgets/search_Idle.dart';
 import 'package:netflix_app/presentation/search/widgets/searchResult.dart';
 
 import '../../application/search/search_bloc.dart';
 
 class ScreenSearch extends StatelessWidget {
-   ScreenSearch({Key? key}) : super(key: key);
+    ScreenSearch({Key? key}) : super(key: key);
 
   final _debouncer = Debouncer(milliseconds: 1 * 100);
 

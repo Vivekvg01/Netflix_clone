@@ -7,12 +7,11 @@ import 'package:netflix_app/presentation/widgets/appBarWidget.dart';
 
 import '../../../application/downloads/downloads_bloc.dart';
 
-
 class ScreenDownloads extends StatelessWidget {
-  ScreenDownloads({Key? key}) : super(key: key);
+  const ScreenDownloads({Key? key}) : super(key: key);
 
-  final _widgetList = [
-   _SmartDownloads(),
+  final _widgetList = const [
+    _SmartDownloads(),
     Section2(),
     Section3(),
   ];
@@ -34,6 +33,7 @@ class ScreenDownloads extends StatelessWidget {
   }
 }
 
+//smart downloads section
 class _SmartDownloads extends StatelessWidget {
   const _SmartDownloads({
     Key? key,
@@ -56,12 +56,15 @@ class _SmartDownloads extends StatelessWidget {
 }
 
 class Section2 extends StatelessWidget {
-  Section2({Key? key}) : super(key: key);
+  const Section2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<DownloadsBloc>(context)
-        .add(const DownloadsEvent.getDownloadsImage());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context)
+          .add(const DownloadsEvent.getDownloadsImage());
+    });
+
     final size = MediaQuery.of(context).size;
     return Column(
       children: [
@@ -91,37 +94,41 @@ class Section2 extends StatelessWidget {
               width: size.width,
               child: state.isLoading
                   ? const Center(child: CircularProgressIndicator())
-                  : Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: size.width * 0.37,
-                          backgroundColor: Colors.grey.withOpacity(0.5),
-                        ),
-                        DownloadsImageWidget(
-                          imageList:
-                              '$imageAppendUrl${state.downloads[0].posterPath}',
-                          angle: 25,
-                          margin: const EdgeInsets.only(left: 170, top: 50),
-                          size: Size(size.width * 0.35, size.width * 0.55),
-                        ),
-                        DownloadsImageWidget(
-                          imageList:
-                              '$imageAppendUrl${state.downloads[1].posterPath}',
-                          angle: -25,
-                          margin: const EdgeInsets.only(right: 170, top: 50),
-                          size: Size(size.width * 0.35, size.width * 0.55),
-                        ),
-                        DownloadsImageWidget(
-                          raduis: 10,
-                          imageList:
-                              '$imageAppendUrl${state.downloads[2].posterPath}',
-                          angle: 0,
-                          margin: const EdgeInsets.only(bottom: 35, top: 50),
-                          size: Size(size.width * 0.4, size.width * 0.6),
-                        ),
-                      ],
-                    ),
+                  : state.downloads.isNotEmpty
+                      ? Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: size.width * 0.37,
+                              backgroundColor: Colors.grey.withOpacity(0.5),
+                            ),
+                            DownloadsImageWidget(
+                              imageList:
+                                  '$imageAppendUrl${state.downloads[0].posterPath}',
+                              angle: 25,
+                              margin: const EdgeInsets.only(left: 170, top: 50),
+                              size: Size(size.width * 0.35, size.width * 0.55),
+                            ),
+                            DownloadsImageWidget(
+                              imageList:
+                                  '$imageAppendUrl${state.downloads[1].posterPath}',
+                              angle: -25,
+                              margin:
+                                  const EdgeInsets.only(right: 170, top: 50),
+                              size: Size(size.width * 0.35, size.width * 0.55),
+                            ),
+                            DownloadsImageWidget(
+                              raduis: 10,
+                              imageList:
+                                  '$imageAppendUrl${state.downloads[2].posterPath}',
+                              angle: 0,
+                              margin:
+                                  const EdgeInsets.only(bottom: 35, top: 50),
+                              size: Size(size.width * 0.4, size.width * 0.6),
+                            ),
+                          ],
+                        )
+                      : const Center(child: Text('Downloads not found')),
             );
           },
         ),
