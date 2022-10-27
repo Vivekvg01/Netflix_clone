@@ -44,10 +44,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         final trending = resp.results;
         final tesneDrama = resp.results;
         final southIndian = resp.results;
-        pastYear.shuffle();
-        trending.shuffle();
-        tesneDrama.shuffle();
-        southIndian.shuffle();
 
         return HomeState(
           stateId: DateTime.now().millisecondsSinceEpoch.toString(),
@@ -85,7 +81,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           souuthIndianMovieList: state.souuthIndianMovieList,
           trendingTvList: top10List,
           isLoading: false,
-          hasError: true,
+          hasError: false, 
         );
       });
 

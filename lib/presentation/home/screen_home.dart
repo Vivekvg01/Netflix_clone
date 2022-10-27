@@ -46,42 +46,59 @@ class ScreenHome extends StatelessWidget {
                       return const Center(
                         child: Text('Error while getting data'),
                       );
-                    } else {
-                      final releasedPastYear = state.pastYearMovieList.map((m) {
-                        return'$imageAppendUrl.${m.posterPath}';
-                      }).toList(); 
-                      return ListView(
-                        children:  [
-                          BackgroundCard(),
-                          MainTitleCard(
-                            title: "Released in the Past Year",
-                            posterList: releasedPastYear,
-                          ),
-                          kHeight,
-                          MainTitleCard(
-                            title: "Trending Now ",
-                            posterList: [],
-                          ),
-                          kHeight,
-                          MainTitle(
-                            title: "Top 10 TV Shows In India Today",
-                          ),
-                          kHeight,
-                          NumberTitleCard(),
-                          kHeight,
-                          MainTitleCard(
-                            title: "Tense Drama",
-                            posterList: [],
-                          ),
-                          kHeight,
-                          MainTitleCard(
-                            title: "South Indian Cinimas",
-                            posterList: [],
-                          ),
-                          kHeight,
-                        ],
-                      );
                     }
+                    //released past year
+                    final _releasedPastYear = state.pastYearMovieList.map((m) {
+                      return '$imageAppendUrl${m.posterPath}';
+                    }).toList();
+                    _releasedPastYear.shuffle();
+                    //trending movie list
+                    final _trending = state.trendingMovieList.map((m) {
+                      return '$imageAppendUrl${m.posterPath}';
+                    }).toList();
+                    _trending.shuffle();
+                    //tesne drama
+                    final _tenseDrama = state.tenseDramaMovieList.map((m) {
+                      return '$imageAppendUrl${m.posterPath}';
+                    }).toList();
+                    _tenseDrama.shuffle();
+                    //southIndian movies
+                    final _southIndian = state.tenseDramaMovieList.map((m) {
+                      return '$imageAppendUrl${m.posterPath}';
+                    }).toList();
+                    _southIndian.shuffle();
+                    //listView
+                    return ListView(
+                      children: [
+                        BackgroundCard(),
+                        MainTitleCard(
+                          title: "Released in the Past Year",
+                          posterList: _releasedPastYear.,
+                        ),
+                        kHeight,
+                        MainTitleCard(
+                          title: "Trending Now ",
+                          posterList: _trending,
+                        ),
+                        kHeight,
+                        MainTitle(
+                          title: "Top 10 TV Shows In India Today",
+                        ),
+                        kHeight,
+                        NumberTitleCard(),
+                        kHeight,
+                        MainTitleCard(
+                          title: "Tense Drama",
+                          posterList: _tenseDrama,
+                        ),
+                        kHeight,
+                        MainTitleCard(
+                          title: "Most Liked",
+                          posterList: _southIndian,
+                        ),
+                        kHeight,
+                      ],
+                    );
                   },
                 ),
                 scrollNotifier.value == true
