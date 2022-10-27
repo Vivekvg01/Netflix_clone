@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_app/core/colors/colors.dart';
 import 'package:netflix_app/core/constants.dart';
-import 'package:netflix_app/presentation/widgets/appBarWidget.dart';
+import 'package:netflix_app/presentation/widgets/appbar_widget.dart';
 
 import '../../../application/downloads/downloads_bloc.dart';
 

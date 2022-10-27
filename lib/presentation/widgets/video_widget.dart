@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants.dart';
 
 class VideoWidget extends StatelessWidget {
-  const VideoWidget({Key? key}) : super(key: key);
+  const VideoWidget({
+    Key? key,
+    required this.url,
+  }) : super(key: key);
+
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +17,18 @@ class VideoWidget extends StatelessWidget {
           width: double.infinity,
           height: 200,
           child: Image.network(
-            kHotandNewImg,
+            url,
             fit: BoxFit.cover,
+            loadingBuilder:
+                (BuildContext _, Widget child, ImageChunkEvent? progress) {
+              if (progress == null) {
+                return child;
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
           ),
         ),
         Positioned(

@@ -7,7 +7,6 @@ import 'package:netflix_app/core/colors/colors.dart';
 import 'package:netflix_app/core/constants.dart';
 import 'package:netflix_app/presentation/search/widgets/title.dart';
 
-
 class SearchIdleWidget extends StatelessWidget {
   const SearchIdleWidget({Key? key}) : super(key: key);
 
@@ -36,7 +35,9 @@ class SearchIdleWidget extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (ctx, index) {
                   final movie = state.idleList[index];
-                  return TopSearchItemTile(title: movie.title ?? 'No title provided', imageUrl: '$imageAppendUrl${movie.posterPath}');
+                  return TopSearchItemTile(
+                      title: movie.title ?? 'No title provided',
+                      imageUrl: '$imageAppendUrl${movie.posterPath}');
                 },
                 separatorBuilder: (ctx, index) => kHeight20,
                 itemCount: state.idleList.length,
@@ -66,15 +67,15 @@ class TopSearchItemTile extends StatelessWidget {
         Container(
           width: screenWidth * 0.3,
           height: 65,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(imageUrl),
             ),
           ),
         ),
-       const SizedBox(width: 5),
-         Expanded(
+        const SizedBox(width: 5),
+        Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: 8.0),
             child: Text(
@@ -87,7 +88,7 @@ class TopSearchItemTile extends StatelessWidget {
             ),
           ),
         ),
-       const CircleAvatar(
+        const CircleAvatar(
           backgroundColor: kWhiteColor,
           radius: 25,
           child: CircleAvatar(

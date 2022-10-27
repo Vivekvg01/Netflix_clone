@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/colors/colors.dart';
 import 'package:netflix_app/core/constants.dart';
@@ -35,7 +34,8 @@ class VideoListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final posterPath = VideoListItemInheritedWidget.of(context)?.movieData.posterPath;
+    final posterPath =
+        VideoListItemInheritedWidget.of(context)?.movieData.posterPath;
     return Stack(
       children: [
         Container(
@@ -70,10 +70,12 @@ class VideoListItem extends StatelessWidget {
                 //Right Side
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children:  [
+                  children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundImage: posterPath == null ? null : NetworkImage('$imageAppendUrl$posterPath'),
+                      backgroundImage: posterPath == null
+                          ? null
+                          : NetworkImage('$imageAppendUrl$posterPath'),
                     ),
                     const VideoActionsWidget(
                       icon: Icons.emoji_emotions,

@@ -5,12 +5,12 @@ import 'package:netflix_app/application/search/search_bloc.dart';
 import 'package:netflix_app/core/constants.dart';
 import 'package:netflix_app/domian/core/debounce/debounce.dart';
 import 'package:netflix_app/presentation/search/widgets/search_Idle.dart';
-import 'package:netflix_app/presentation/search/widgets/searchResult.dart';
+import 'package:netflix_app/presentation/search/widgets/search_result.dart';
 
 import '../../application/search/search_bloc.dart';
 
 class ScreenSearch extends StatelessWidget {
-    ScreenSearch({Key? key}) : super(key: key);
+  ScreenSearch({Key? key}) : super(key: key);
 
   final _debouncer = Debouncer(milliseconds: 1 * 100);
 
@@ -38,7 +38,7 @@ class ScreenSearch extends StatelessWidget {
                 ),
                 style: const TextStyle(color: Colors.white),
                 onChanged: (value) {
-                  if(value.isEmpty){
+                  if (value.isEmpty) {
                     return;
                   }
                   _debouncer.run(() {

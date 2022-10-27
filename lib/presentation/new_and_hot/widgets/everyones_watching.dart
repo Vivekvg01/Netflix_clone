@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/presentation/new_and_hot/widgets/customButton.dart';
+import 'package:netflix_app/presentation/new_and_hot/widgets/custom_button.dart';
 import '../../../core/constants.dart';
-import '../../widgets/videoWidget.dart';
+import '../../widgets/video_widget.dart';
 
-class EveryonesWatching extends StatelessWidget {
-  const EveryonesWatching({
+class EveryOnesWatchingWidget extends StatelessWidget {
+  final String posterPath;
+  final String movieName;
+  final String description;
+
+  const EveryOnesWatchingWidget({
     Key? key,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -15,22 +22,24 @@ class EveryonesWatching extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kHeight,
-        const Text(
-          "Moon Knight",
-          style: TextStyle(
+        Text(
+          movieName,
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),
         kHeight,
-        const Text(
-          "This hit sitcom follows the merry misadventures of six 20-somthing pals as hry navigate the pitfails of work, life and love in 1990s manhattan",
-          style: TextStyle(
+        Text(
+          description,
+          maxLines: 7,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             color: kGreyColor,
           ),
         ),
         kHeigth50,
-        const VideoWidget(),
+         VideoWidget(url: posterPath,),
         kHeight,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

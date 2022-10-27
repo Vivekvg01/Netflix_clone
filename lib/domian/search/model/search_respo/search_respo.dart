@@ -1,17 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:netflix_app/core/constants.dart';
 
-
-
 part 'search_respo.g.dart';
 
 @JsonSerializable()
 class SearchRespo {
-
-@JsonKey(name: 'results')
+  @JsonKey(name: 'results')
   List<SearchResultData> results;
 
-  SearchRespo({this.results = const[]});
+  SearchRespo({this.results = const []});
 
   factory SearchRespo.fromJson(Map<String, dynamic> json) {
     return _$SearchRespoFromJson(json);

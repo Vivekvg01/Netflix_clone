@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/constants.dart';
-import 'package:netflix_app/presentation/widgets/imageCard.dart';
-import 'package:netflix_app/presentation/widgets/mainTitle.dart';
+import 'package:netflix_app/presentation/widgets/image_card.dart';
+import 'package:netflix_app/presentation/widgets/main_title.dart';
 
 class MainTitleCard extends StatelessWidget {
   final String title;
+  final List<String> posterList;
 
   const MainTitleCard({
     Key? key,
     required this.title,
+    required this.posterList,
   }) : super(key: key);
 
   @override
@@ -25,8 +27,10 @@ class MainTitleCard extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(
-              10,
-              (index) => const ImageCard(),
+              posterList.length,
+              (index) => ImageCard(
+                imgUrl: posterList[index],
+              ),
             ),
           ),
         ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_app/application/home/home_bloc.dart';
 import 'package:netflix_app/core/constants.dart';
-import 'package:netflix_app/presentation/home/widgets/backgroudCard.dart';
-import 'package:netflix_app/presentation/widgets/mainTitle.dart';
-import 'package:netflix_app/presentation/widgets/mainTitleCard.dart';
-import 'package:netflix_app/presentation/widgets/numberTitleCard.dart';
+import 'package:netflix_app/presentation/home/widgets/backgroud_card.dart';
+import 'package:netflix_app/presentation/widgets/main_title.dart';
+import 'package:netflix_app/presentation/widgets/main_titleCard.dart';
+import 'package:netflix_app/presentation/widgets/number_titleCard.dart';
 
 ValueNotifier scrollNotifier = ValueNotifier(true);
 
@@ -13,6 +15,10 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<HomeBloc>(context).add(const GetHomeScreenData());
+    });
+
     return Scaffold(
       body: ValueListenableBuilder(
         valueListenable: scrollNotifier,
@@ -30,24 +36,53 @@ class ScreenHome extends StatelessWidget {
             },
             child: Stack(
               children: [
-                ListView(
-                  children: const [
-                    BackgroundCard(),
-                    MainTitleCard(title: "Released in the Past Year"),
-                    kHeight,
-                    MainTitleCard(title: "Trending Now "),
-                    kHeight,
-                    MainTitle(
-                      title: "Top 10 TV Shows In India Today",
-                    ),
-                    kHeight,
-                    NumberTitleCard(),
-                    kHeight,
-                    MainTitleCard(title: "Tense Drama"),
-                    kHeight,
-                    MainTitleCard(title: "South Indian Cinimas"),
-                    kHeight,
-                  ],
+                BlocBuilder<HomeBloc, HomeState>(
+                  builder: (context, state) {
+                    if (state.isLoading) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else if (state.hasError) {
+                      return const Center(
+                        child: Text('Error while getting data'),
+                      );
+                    } else {
+                      final releasedPastYear = state.pastYearMovieList.map((m) {
+                        return'$imageAppendUrl.${m.posterPath}';
+                      }).toList(); 
+                      return ListView(
+                        children:  [
+                          BackgroundCard(),
+                          MainTitleCard(
+                            title: "Released in the Past Year",
+                            posterList: releasedPastYear,
+                          ),
+                          kHeight,
+                          MainTitleCard(
+                            title: "Trending Now ",
+                            posterList: [],
+                          ),
+                          kHeight,
+                          MainTitle(
+                            title: "Top 10 TV Shows In India Today",
+                          ),
+                          kHeight,
+                          NumberTitleCard(),
+                          kHeight,
+                          MainTitleCard(
+                            title: "Tense Drama",
+                            posterList: [],
+                          ),
+                          kHeight,
+                          MainTitleCard(
+                            title: "South Indian Cinimas",
+                            posterList: [],
+                          ),
+                          kHeight,
+                        ],
+                      );
+                    }
+                  },
                 ),
                 scrollNotifier.value == true
                     ? AnimatedContainer(

@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/presentation/new_and_hot/widgets/customButton.dart';
+import 'package:netflix_app/presentation/new_and_hot/widgets/custom_button.dart';
 
 import '../../core/constants.dart';
 
 class ComingSoon extends StatelessWidget {
-  const ComingSoon({Key? key}) : super(key: key);
+  final String id;
+  final String day;
+  final String month;
+  final String posterPath;
+  final String movieName;
+  final String description;
+
+  const ComingSoon({
+    Key? key,
+    required this.id,
+    required this.day,
+    required this.month,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +28,22 @@ class ComingSoon extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 50,
+          width: 49,
           height: 450,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children: [
               Text(
-                "FEB",
-                style: TextStyle(
+                month,
+                style: const TextStyle(
                   fontSize: 16,
                   color: kGreyColor,
                 ),
               ),
               Text(
-                "11",
-                style: TextStyle(
+                day,
+                style: const TextStyle(
                   fontSize: 30,
                   letterSpacing: 4,
                   fontWeight: FontWeight.bold,
@@ -38,7 +53,7 @@ class ComingSoon extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: size.width - 50,
+          width: size.width - 53,
           height: 450,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,8 +64,17 @@ class ComingSoon extends StatelessWidget {
                     width: double.infinity,
                     height: 200,
                     child: Image.network(
-                      "https://www.themoviedb.org/t/p/w710_and_h400_multi_faces/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+                      posterPath,
                       fit: BoxFit.cover,
+                      loadingBuilder: (BuildContext _, Widget child , ImageChunkEvent? progress) {
+                        if (progress == null) {
+                          return child;
+                        } else {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                      },
                     ),
                   ),
                   Positioned(
@@ -73,15 +97,18 @@ class ComingSoon extends StatelessWidget {
               ),
               Row(
                 children: [
-                  const Text(
-                    "Stanger Things",
-                    style: TextStyle(
-                      fontSize: 35,
-                      letterSpacing: -3,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      movieName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 35,
+                        letterSpacing: -2,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  const Spacer(),
                   Row(
                     children: const [
                       CustomButton(
@@ -103,19 +130,20 @@ class ComingSoon extends StatelessWidget {
                 ],
               ),
               kHeight,
-              const Text("Coming on Friday"),
+              Text("Coming on $day $month"),
               kHeight,
-              const Text(
-                "Stanger Things",
-                style: TextStyle(
+              Text(
+                movieName,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               kHeight,
-              const Text(
-                "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
-                style: TextStyle(
+              Text(
+                description,
+                maxLines: 5,
+                style: const TextStyle(
                   color: kGreyColor,
                 ),
               ),
