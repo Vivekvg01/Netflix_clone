@@ -179,7 +179,7 @@ class EveryOnesWatchingList extends StatelessWidget {
                 vertical: 5,
                 horizontal: 20,
               ),
-              itemCount: state.everyonesWatchingList.length,
+              itemCount: state.everyonesWatchingList.length, 
               itemBuilder: (context, index) {
                 final movie = state.everyonesWatchingList[index];
                 if (movie.id == null) {
