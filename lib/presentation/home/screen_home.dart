@@ -5,8 +5,8 @@ import 'package:netflix_app/application/home/home_bloc.dart';
 import 'package:netflix_app/core/constants.dart';
 import 'package:netflix_app/presentation/home/widgets/backgroud_card.dart';
 import 'package:netflix_app/presentation/widgets/main_title.dart';
-import 'package:netflix_app/presentation/widgets/main_titleCard.dart';
-import 'package:netflix_app/presentation/widgets/number_titleCard.dart';
+import 'package:netflix_app/presentation/widgets/main_title_card.dart';
+import 'package:netflix_app/presentation/widgets/number_title_card.dart';
 
 ValueNotifier scrollNotifier = ValueNotifier(true);
 
@@ -67,13 +67,19 @@ class ScreenHome extends StatelessWidget {
                       return '$imageAppendUrl${m.posterPath}';
                     }).toList();
                     _southIndian.shuffle();
+
+                    //top10 tvshows
+                    final _top10tvShows = state.trendingTvList.map((t) {
+                      return '$imageAppendUrl${t.posterPath}';
+                    }).toList();
+
                     //listView
                     return ListView(
                       children: [
                         BackgroundCard(),
                         MainTitleCard(
                           title: "Released in the Past Year",
-                          posterList: _releasedPastYear.,
+                          posterList: _releasedPastYear,
                         ),
                         kHeight,
                         MainTitleCard(
@@ -81,11 +87,13 @@ class ScreenHome extends StatelessWidget {
                           posterList: _trending,
                         ),
                         kHeight,
-                        MainTitle(
-                          title: "Top 10 TV Shows In India Today",
+                        const MainTitle(
+                          title: "Top 10 TV Shows",
                         ),
                         kHeight,
-                        NumberTitleCard(),
+                        NumberTitleCard(
+                          postersList: _top10tvShows.sublist(0,10),
+                        ),
                         kHeight,
                         MainTitleCard(
                           title: "Tense Drama",

@@ -7,9 +7,11 @@ class NumberCard extends StatelessWidget {
   const NumberCard({
     Key? key,
     required this.index,
+    required this.imgUrl,
   }) : super(key: key);
 
   final int index;
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class NumberCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 40,
               height: 150,
             ),
@@ -26,9 +28,9 @@ class NumberCard extends StatelessWidget {
               height: 250,
               decoration: BoxDecoration(
                 borderRadius: kRadius10,
-                image: const DecorationImage(
+                image: DecorationImage(
                   image: NetworkImage(
-                    "https://www.themoviedb.org/t/p/w440_and_h660_face/x6FsYvt33846IQnDSFxla9j0RX8.jpg",
+                    imgUrl,
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -44,7 +46,7 @@ class NumberCard extends StatelessWidget {
             strokeColor: kWhiteColor,
             child: Text(
               "${index + 1}",
-              style: TextStyle(
+              style: const TextStyle(
                 color: kBlackColor,
                 fontSize: 150,
               ),
