@@ -35,7 +35,7 @@ class ScreenNewAndHot extends StatelessWidget {
                 child: Container(
                   height: 30,
                   width: 30,
-                  color: Colors.blue,
+                  child: Image.asset('assets/Netflix-avatar.png'),
                 ),
               ),
               kWidth

@@ -18,7 +18,7 @@ class NumberTitleCard extends StatelessWidget {
         children: List.generate(
           postersList.length,
           (index) => NumberCard(
-            index: index,
+            index: index, 
             imgUrl: postersList[index],
           ),
         ),
