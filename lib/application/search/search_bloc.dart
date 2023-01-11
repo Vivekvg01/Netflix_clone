@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -71,7 +69,6 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<SearchMovie>(
       (event, emit) async {
         // call search ui api
-        print('Searching for${event.movieQuery}');
         emit(const SearchState(
           searchResultList: [],
           idleList: [],

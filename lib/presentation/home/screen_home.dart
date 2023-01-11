@@ -76,7 +76,9 @@ class ScreenHome extends StatelessWidget {
                     //listView
                     return ListView(
                       children: [
-                        BackgroundCard(),
+                        kHeight,
+                        const BackgroundCard(),
+                        kHeight,
                         MainTitleCard(
                           title: "Released in the Past Year",
                           posterList: _releasedPastYear,
@@ -92,7 +94,7 @@ class ScreenHome extends StatelessWidget {
                         ),
                         kHeight,
                         NumberTitleCard(
-                          postersList: _top10tvShows.sublist(0,10),
+                          postersList: _top10tvShows.sublist(0, 10),
                         ),
                         kHeight,
                         MainTitleCard(

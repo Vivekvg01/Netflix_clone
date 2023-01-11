@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/presentation/home/widgets/numberCard.dart';
+import 'package:netflix_app/presentation/home/widgets/number_card.dart';
 
 class NumberTitleCard extends StatelessWidget {
   const NumberTitleCard({

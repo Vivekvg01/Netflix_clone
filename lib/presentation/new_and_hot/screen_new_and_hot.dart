@@ -31,10 +31,12 @@ class ScreenNewAndHot extends StatelessWidget {
                 size: 30,
               ),
               kWidth,
-              Container(
-                height: 30,
-                width: 30,
-                color: Colors.blue,
+              UnconstrainedBox(
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  color: Colors.blue,
+                ),
               ),
               kWidth
             ],
@@ -135,7 +137,6 @@ class ComingSoonList extends StatelessWidget {
         },
       ),
     );
-    ;
   }
 }
 
@@ -179,7 +180,7 @@ class EveryOnesWatchingList extends StatelessWidget {
                 vertical: 5,
                 horizontal: 20,
               ),
-              itemCount: state.everyonesWatchingList.length, 
+              itemCount: state.everyonesWatchingList.length,
               itemBuilder: (context, index) {
                 final movie = state.everyonesWatchingList[index];
                 if (movie.id == null) {
@@ -197,6 +198,5 @@ class EveryOnesWatchingList extends StatelessWidget {
         },
       ),
     );
-    ;
   }
 }

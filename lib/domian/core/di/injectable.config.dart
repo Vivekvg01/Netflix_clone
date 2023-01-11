@@ -8,10 +8,9 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../../../application/downloads/downloads_bloc.dart' as _i9;
-import '../../../application/fast_laugh/fast_laugh_bloc.dart' as _i10;
-import '../../../application/home/home_bloc.dart' as _i11;
-import '../../../application/hot_and_new/hot_and_new_bloc.dart' as _i12;
-import '../../../application/search/search_bloc.dart' as _i13;
+import '../../../application/home/home_bloc.dart' as _i10;
+import '../../../application/hot_and_new/hot_and_new_bloc.dart' as _i11;
+import '../../../application/search/search_bloc.dart' as _i12;
 import '../../../infrastructure/downloads/downloads_repository.dart' as _i6;
 import '../../../infrastructure/hot_and_new/hot_and_new_impl.dart' as _i4;
 import '../../../infrastructure/search/search_impl.dart' as _i8;
@@ -30,12 +29,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i7.SearchService>(() => _i8.SearchImpl());
   gh.factory<_i9.DownloadsBloc>(
       () => _i9.DownloadsBloc(get<_i5.IDownloadsRepo>()));
-  gh.factory<_i10.FastLaughBloc>(
-      () => _i10.FastLaughBloc(get<_i5.IDownloadsRepo>()));
-  gh.factory<_i11.HomeBloc>(() => _i11.HomeBloc(get<_i3.HotAndNewService>()));
-  gh.factory<_i12.HotAndNewBloc>(
-      () => _i12.HotAndNewBloc(get<_i3.HotAndNewService>()));
-  gh.factory<_i13.SearchBloc>(() =>
-      _i13.SearchBloc(get<_i7.SearchService>(), get<_i5.IDownloadsRepo>()));
+  gh.factory<_i10.HomeBloc>(() => _i10.HomeBloc(get<_i3.HotAndNewService>()));
+  gh.factory<_i11.HotAndNewBloc>(
+      () => _i11.HotAndNewBloc(get<_i3.HotAndNewService>()));
+  gh.factory<_i12.SearchBloc>(() =>
+      _i12.SearchBloc(get<_i7.SearchService>(), get<_i5.IDownloadsRepo>()));
   return get;
 }

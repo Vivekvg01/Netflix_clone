@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/presentation/home/widgets/customButtonWidget.dart';
+import 'package:netflix_app/presentation/home/widgets/custom_button_widget.dart';
 
 class BackgroundCard extends StatelessWidget {
   const BackgroundCard({Key? key}) : super(key: key);

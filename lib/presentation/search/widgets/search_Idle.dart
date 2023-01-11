@@ -27,7 +27,9 @@ class SearchIdleWidget extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               } else if (state.isError) {
-                return const Center(child: Text("Error While getting data"));
+                return const Center(
+                  child: Text("Error While getting data"),
+                );
               } else if (state.idleList.isEmpty) {
                 return const Center(child: Text("List is empty"));
               }
@@ -77,7 +79,7 @@ class TopSearchItemTile extends StatelessWidget {
         const SizedBox(width: 5),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.only(left: 8.0),
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               title,
               style: const TextStyle(
