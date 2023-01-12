@@ -31,7 +31,7 @@ To install the project, follow these steps:
 
 Home Screen  |  Trending movies   |  Coming soon |  Everyone watching 
 
-:-------------------------:|:-------------------------:|:-------------------------::-------------------------:|
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
 ![](assets/Netflix%20screenshots/Home%20Screen.png)|![](assets/Netflix%20screenshots/trendings.png)|![](assets/Netflix%20screenshots/coming%20soon.png)|![](assets/Netflix%20screenshots/everyones%20watching.png) 
 
 
