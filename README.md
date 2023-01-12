@@ -1,16 +1,54 @@
-# netflix_app
+# Netflix Clone UI
 
-A new Flutter project.
+This is a clone application using TMDb REST API.Used GET method for fetching the series details from the API. Created this for learing API calls.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Table of contenst
 
-A few resources to get you started if this is your first Flutter project:
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [Packages and Credits](#packages-and-credits)
+- [License](#license)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Installation
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To install and run this project, you will need to have the following dependencies installed on
+your machine:
+ - Flutter SDK
+ - Android Studio or Visual Studio Code
+
+To install the project, follow these steps:
+
+1. Clone the repository to your local machine
+2. Open the project in Android Studio or Visual Studio Code
+3. Connect an Android device or lauch an emulator
+4. Run the command 'flutter pub get' using the terminal
+5. Run the project by clicking the "run" button in the top menu or by using the terminal
+   command 'flutter run'
+
+
+## Screenshots 
+
+Home Screen  |  Trending movies   |  Coming soon |  Everyone watching  | Top searches | searches
+ |downloads |
+
+:-------------------------:|:-------------------------:|:-------------------------:
+![](assets/Netflix%20screenshots/Home%20Screen.png)|![](assets/Netflix%20screenshots/trendings.png)|![](assets/Netflix%20screenshots/coming%20soon.png)![](assets/Netflix%20screenshots/everyones%20watching.png) 
+![](assets/Netflix%20screenshots/top%20searches.png)
+![](assets/Netflix%20screenshots/searches.png)![](assets/Netflix%20screenshots/downloads.png) 
+
+
+
+## Packages and Credits
+- [Dio](https://github.com/flutterchina/dio)
+- [Json annotation](https://github.com/google/json_serializable.dart/tree/master/json_annotation)
+- [Json serializable](https://github.com/google/json_serializable.dart/tree/master/json_serializable)
+
+
+
+
+## License
+
+[![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
+- MIT License
+- Copyright 2022 © [VIVEK V.G](https://github.com/Vivekvg01)

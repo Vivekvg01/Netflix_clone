@@ -128,7 +128,9 @@ class Section2 extends StatelessWidget {
                             ),
                           ],
                         )
-                      : const Center(child: Text('Downloads not found')),
+                      : const Center(
+                          child: Text('Downloads not found'),
+                        ),
             );
           },
         ),
