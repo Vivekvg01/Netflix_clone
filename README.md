@@ -1,4 +1,4 @@
-# Netflix Clone UI
+ # Netflix Clone UI
 
 This is a clone application using TMDb REST API.Used GET method for fetching the series details from the API. Created this for learing API calls.
 
@@ -29,14 +29,13 @@ To install the project, follow these steps:
 
 ## Screenshots 
 
-Home Screen  |  Trending movies   |  Coming soon |  Everyone watching 
-
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-![](assets/Netflix%20screenshots/Home%20Screen.png)|![](assets/Netflix%20screenshots/trendings.png)|![](assets/Netflix%20screenshots/coming%20soon.png)|![](assets/Netflix%20screenshots/everyones%20watching.png) 
-
+Home Screen             |  Coming Soon Screen   |  Top Searches  |  Search
+:-------------------------:|:-------------------------:|:-------------------------: |:-------------------------:
+![](assets/Netflix%20screenshots/Home%20Screen.png)|![](assets/Netflix%20screenshots/coming%20soon.png)|![](assets/Netflix%20screenshots/top%20searches.png)|![](assets/Netflix%20screenshots/searches.png)
 
 
 ## Packages and Credits
+
 - [Dio](https://github.com/flutterchina/dio)
 - [Json annotation](https://github.com/google/json_serializable.dart/tree/master/json_annotation)
 - [Json serializable](https://github.com/google/json_serializable.dart/tree/master/json_serializable)
@@ -48,4 +47,4 @@ Home Screen  |  Trending movies   |  Coming soon |  Everyone watching
 
 [![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
 - MIT License
-- Copyright 2022 © [VIVEK V.G](https://github.com/Vivekvg01)
+- Copyright 2022 © [Vivek V.G](https://github.com/Vivekvg01)
