@@ -29,7 +29,7 @@ To install the project, follow these steps:
 
 ## Screenshots 
 
-Home Screen             |  Coming Soon Screen   |  Top Searches  |  Search
+Home Screen             |  Coming Soon  |  Top Searches  |  Search
 :-------------------------:|:-------------------------:|:-------------------------: |:-------------------------:
 ![](assets/Netflix%20screenshots/Home%20Screen.png)|![](assets/Netflix%20screenshots/coming%20soon.png)|![](assets/Netflix%20screenshots/top%20searches.png)|![](assets/Netflix%20screenshots/searches.png)
 
